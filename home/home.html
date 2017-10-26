@@ -1,0 +1,82 @@
+<ion-header>
+  <ion-navbar color="secondary">
+    
+    <ion-title class="topC">Vivienda</ion-title>
+  </ion-navbar>
+</ion-header>
+
+              <ion-content >
+                  <ion-card >
+                      <ion-card-content >
+                        Ingrese la cantidad que gasta <strong>Mensualmente</strong> en las siguientes actividades de Vivienda.
+                      </ion-card-content>
+                    </ion-card>
+                    
+
+                  <br>
+                  <form [formGroup]="myForm" (ngSubmit)="saveData()" novalidate>
+                    <ion-list> 
+                      <ion-item>
+                        <ion-label color="secondary" >Luz:</ion-label>
+                        <ion-input text-right formControlName="number1" type="number" placeholder="$"></ion-input>
+                      </ion-item>
+                      <div class="ali" *ngIf="myForm.get('number1').errors && myForm.get('number1').dirty">
+                        <p color="danger" ion-text *ngIf="myForm.get('number1').hasError('required')">Campo requerido</p>
+                        <p color="danger" ion-text *ngIf="myForm.get('number1').hasError('pattern')">Cantidad invalida</p>
+                      </div>
+
+                      <ion-item>
+                        <ion-label color="secondary" >Comida:</ion-label>
+                        <ion-input text-right formControlName="number2" type="number" placeholder="$"></ion-input>
+                      </ion-item>
+                      <div class="ali" *ngIf="myForm.get('number2').errors && myForm.get('number2').dirty">
+                        <p color="danger" ion-text *ngIf="myForm.get('number2').hasError('required')">Campo requerido</p>
+                        <p color="danger" ion-text *ngIf="myForm.get('number2').hasError('pattern')">Cantidad invalida</p>
+                      </div>
+
+                      <ion-item>
+                        <ion-label color="secondary" >Internet:</ion-label>
+                        <ion-input text-right formControlName="number3" type="number" placeholder="$"></ion-input>
+                      </ion-item>
+                      <div class="ali" *ngIf="myForm.get('number3').errors && myForm.get('number3').dirty">
+                        <p color="danger" ion-text *ngIf="myForm.get('number3').hasError('required')">Campo requerido</p>
+                        <p color="danger" ion-text *ngIf="myForm.get('number3').hasError('pattern')">Cantidad invalida</p>
+                      </div>
+
+                      <ion-item>
+                        <ion-label color="secondary" >Gas:</ion-label>
+                        <ion-input text-right formControlName="number4" type="number" placeholder="$"></ion-input>
+                      </ion-item>
+                      <div class="ali" *ngIf="myForm.get('number4').errors && myForm.get('number4').dirty">
+                        <p color="danger" ion-text *ngIf="myForm.get('number4').hasError('required')">Campo requerido</p>
+                        <p color="danger" ion-text *ngIf="myForm.get('number4').hasError('pattern')">Cantidad invalida</p>
+                      </div>
+
+                      <ion-item>
+                        <ion-label color="secondary" >Renta:</ion-label>
+                        <ion-input text-right formControlName="number5" type="number" placeholder="$"></ion-input>
+                      </ion-item>
+                      <div class="ali" *ngIf="myForm.get('number5').errors && myForm.get('number5').dirty">
+                        <p color="danger" ion-text *ngIf="myForm.get('number5').hasError('required')">Campo requerido</p>
+                        <p color="danger" ion-text *ngIf="myForm.get('number5').hasError('pattern')">Cantidad invalida</p>
+                      </div>
+
+                      <ion-item>
+                        <ion-label color="secondary" >Otros:</ion-label>
+                        <ion-input text-right formControlName="number6" type="number" placeholder="$"></ion-input>
+                      </ion-item>
+                      <div class="ali" *ngIf="myForm.get('number6').errors && myForm.get('number6').dirty">
+                        <p color="danger" ion-text *ngIf="myForm.get('number6').hasError('pattern')">Cantidad invalida</p>
+                      </div>
+                      
+                    </ion-list>
+
+                    <br><br><br>
+                    
+                    <div class="las">
+                    <button ion-button  type="submit"color="secondary" round [disabled]="myForm.invalid"> Guardar</button>
+                    <button ion-button  color="dark" (click)="manda()" round>  Editar</button>
+                      </div>
+                  </form>
+                </ion-content>
+                
